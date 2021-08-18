@@ -7,11 +7,16 @@ def randomString(size: int, **kwargs):
     # Option: "diacritics"          0 = no diacritics(default),  1 = random diacritics # TODO
     # Option: "exclude"             Excludes all given karakters in the result.
     
-    options = 1 # Default lowercasess
-    lowercase = string.ascii_lowercase
-    upercase,numbers,symbol,diacritics, exclude = "","","","",""
+    options = 0 # Default lowercasess
+    lowercase, upercase,numbers,symbol,diacritics, exclude = "","","","","",""
 
 
+
+    if "lowercase" in kwargs: 
+        options += 1
+        lowercase = string.ascii_lowercase
+        for x in exclude:
+            lowercase.replace(x,"")        
     if "upercase" in kwargs: 
         options += 1
         upercase = string.ascii_uppercase
@@ -30,10 +35,11 @@ def randomString(size: int, **kwargs):
     # if "diacritics" in kwargs:
     #     options += 1
 
-    # Error for to much options
+    # Error for no or to much options
+    if options == 0:
+        raise Exception("No available options selected")
     if options > size:
         raise Exception("Size not sufficient with options.")
-    
 
     
 

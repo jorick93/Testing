@@ -59,6 +59,5 @@ def randomString(size: int, *args, **kwargs):
         part += 1
     return "".join(map(str,characters))
 
-
 if __name__ == '__main__':
     print(randomString(8, "lowercase", "uppercase","symbol",exclude="abcdefghi"))

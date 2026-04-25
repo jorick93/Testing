@@ -74,7 +74,7 @@ Expected:
 * Different responses for true vs false
 
 Risk:
-* System reacts differently → possible injection
+* System reacts differently > possible injection
 
 ### 5. UNION Injection (basic check)
 Try combining queries:
@@ -110,7 +110,7 @@ Always perform SQL Injection testing in a controlled test environment and stick 
 Login form:
 * Username: `' OR '1'='1`
 * Password: anything
-If login succeeds → potential SQL Injection vulnerability
+If login succeeds > potential SQL Injection vulnerability
 
 ### API Example
 

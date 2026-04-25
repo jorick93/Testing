@@ -43,7 +43,7 @@ Expected:
 
 Risk:
 
-* Alert is executed → XSS vulnerability
+* Alert is executed > XSS vulnerability
 
 ### 2. HTML Injection Check
 ```
@@ -53,7 +53,7 @@ Expected:
 * Rendered as text
 
 Risk:
-* Rendered as HTML → possible XSS entry point
+* Rendered as HTML > possible XSS entry point
 
 ### 3. Attribute Injection
 ```
@@ -125,7 +125,7 @@ Response:
   "name": "<script>alert(1)</script>"
 }
 ```
-If this is rendered in the GUI without encoding → potential XSS
+If this is rendered in the GUI without encoding > potential XSS
 
 ## Safe Testing Tips
 * Use test environments only
@@ -139,7 +139,7 @@ Comment field:
 ```
 <script>alert(1)</script>
 ```
-If alert appears when viewing the comment → potential stored XSS
+If alert appears when viewing the comment > potential stored XSS
 
 ## Reporting
 When reporting, include:
